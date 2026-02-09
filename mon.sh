@@ -10,7 +10,6 @@ cpu_load=$(echo "$cpu_tot / $cpus" | bc)
 mem_av=$(free -m | grep Mem | awk '{print$7}')
 mem_tot=$(free -m | grep Mem | awk '{print$2}')
 mem_usage=$(( ($mem_av * 100) / $mem_tot ))
-echo $mem_usage
 disk_usage=$(df -h / | tail -1 | awk '{print $5}' | sed 's/\%//')
 uptime=$(uptime | awk -F 'load average: ' '{print $2}')
 
